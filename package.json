@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "angular": "^1.8.3",
+    "gh-pages": "^6.3.0",
     "ol": "^7.4.0"
   },
   "devDependencies": {

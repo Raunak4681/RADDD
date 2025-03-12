@@ -18,8 +18,9 @@ public class RadarApplication {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
+                String allowedOrigin = System.getenv("ALLOWED_ORIGIN");
                 registry.addMapping("/api/**")
-                    .allowedOrigins("http://localhost:5173")
+                    .allowedOrigins(allowedOrigin != null ? allowedOrigin : "http://localhost:5173")
                     .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                     .allowedHeaders("*");
             }
